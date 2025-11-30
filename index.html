@@ -22,6 +22,10 @@
         nav a { color: #e2e8f0; text-decoration: none; transition: color 0.3s; }
         nav a:hover { color: #6366f1; }
 
+        /* Mobile Menu Toggle */
+        .menu-toggle { display: none; background: none; border: none; color: #e2e8f0; font-size: 1.8rem; cursor: pointer; padding: 0.5rem; z-index: 1001; }
+        .nav-menu { display: flex; }
+
         /* Hero Section */
         .hero { background: linear-gradient(135deg, #0f0f1e 0%, #1e1e3f 100%); padding: 150px 0 100px; text-align: center; color: white; position: relative; overflow: hidden; }
         .hero-content { position: relative; z-index: 1; }
@@ -55,9 +59,8 @@
         /* Projects Grid */
         .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
-    width: 100%;
 }
         .project-card { background: rgba(30, 30, 63, 0.5); border-radius: 15px; padding: 2rem; border: 1px solid rgba(99, 102, 241, 0.2); transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s; backdrop-filter: blur(10px); }
         .project-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(99, 102, 241, 0.3); border-color: rgba(99, 102, 241, 0.5); }
@@ -105,12 +108,44 @@
         .scroll-animate.visible { opacity: 1; transform: translateY(0); }
 
         @media (max-width: 768px) {
+    .menu-toggle { display: block; }  /* Shows hamburger on mobile */
+    .nav-menu { 
+        display: none;  /* Hides menu by default */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(15, 15, 30, 0.98);
+        flex-direction: column;  /* Stacks links vertically */
+        padding: 1rem 0;
+        border-top: 1px solid rgba(99, 102, 241, 0.2);
+    }
+    .nav-menu.active { display: flex; }  /* Shows menu when active */
+    nav ul { flex-direction: column; gap: 0; width: 100%; }
+    nav ul li { width: 100%; text-align: center; }
+    nav ul li a { 
+        display: block;
+        padding: 1rem;
+        border-bottom: 1px solid rgba(99, 102, 241, 0.1);
+    }
    .hero h1 { font-size: 2.5rem; }
             .hero p { font-size: 1.1rem; }
             nav ul { gap: 1rem; font-size: 0.9rem; }
-            .projects-grid { grid-template-columns: 1fr; }
+             .projects-grid {
+        grid-template-columns: 1fr !important; /* force 1 column */
+        gap: 1.5rem;
+    }
             .stat-number { font-size: 2.5rem; }
             .floating-cta { bottom: 20px; right: 20px; padding: 0.8rem 1.5rem; font-size: 0.9rem; }
+            .project-card {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .workflow-img {
+        width: 100%;
+        height: auto;
+    }
 }
     </style>
 </head>
@@ -118,10 +153,10 @@
 
     <!-- Navigation -->
         <nav class="scroll-animate">
-
-        <div class="container">
-            <div class="logo">MNC</div>
-            <ul>
+    <div class="container">
+        <div class="logo">MNC</div>
+        <button class="menu-toggle" aria-label="Toggle menu">☰</button>  <!-- NEW -->
+        <ul class="nav-menu">  <!-- Added class="nav-menu" -->
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
@@ -362,6 +397,20 @@
     <a href="https://calendly.com/markconcha0214/discovery-call" target="_blank" class="floating-cta">Book Free Consultation</a>
 
      <script>
+         // Mobile Menu Toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    
+    menuToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+    });
+    
+    // Close menu when clicking on a link
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+        });
+    });
     // Floating CTA
     window.addEventListener('scroll', () => {
         const cta = document.querySelector('.floating-cta');
