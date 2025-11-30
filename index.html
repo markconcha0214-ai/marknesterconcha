@@ -53,7 +53,11 @@
         .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 3rem; color: white; }
 
         /* Projects Grid */
-        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr)); /* 3 vertical columns on desktop */
+    gap: 2rem;
+}
         .project-card { background: rgba(30, 30, 63, 0.5); border-radius: 15px; padding: 2rem; border: 1px solid rgba(99, 102, 241, 0.2); transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s; backdrop-filter: blur(10px); }
         .project-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(99, 102, 241, 0.3); border-color: rgba(99, 102, 241, 0.5); }
         .project-card h3 { color: #6366f1; font-size: 1.5rem; margin-bottom: 1rem; }
@@ -100,13 +104,13 @@
         .scroll-animate.visible { opacity: 1; transform: translateY(0); }
 
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
+   .hero h1 { font-size: 2.5rem; }
             .hero p { font-size: 1.1rem; }
             nav ul { gap: 1rem; font-size: 0.9rem; }
             .projects-grid { grid-template-columns: 1fr; }
             .stat-number { font-size: 2.5rem; }
             .floating-cta { bottom: 20px; right: 20px; padding: 0.8rem 1.5rem; font-size: 0.9rem; }
-        }
+}
     </style>
 </head>
 <body>
@@ -185,8 +189,8 @@
          <h2 class="section-title scroll-animate">Project Highlights</h2>
         <div class="projects-grid">
             <div class="project-card scroll-animate">
-                <a href="images/Screenshot 2025-11-16 195407.png" class="workflow-image-link"><img src="images/Screenshot 2025-11-16 195407.png" alt="Multi-Platform AI Chatbots" style="width:100%; border-radius:10px; margin-bottom:1rem;" class="workflow-img"></a>
-                <h3>Multi-Platform AI Chatbots</h3>
+                <a href="images/Screenshot 2025-11-16 195407.png" class="workflow-image-link"><img src="images/Screenshot 2025-11-16 195407.png" alt="Multi-Platform AI Chatbots" class="workflow-img"></a>
+                <h3 class="scroll-animate">Multi-Platform AI Chatbots</h3>
                 <div class="project-section">
                     <strong>Workflow:</strong>
                     <p>Built intelligent chatbots for personal/business use with n8n, OpenAI, and Pinecone Vector DB.</p>
@@ -200,8 +204,8 @@
             </div>
 
             <div class="project-card scroll-animate">
-                <a href="images/Screenshot 2025-11-25 174312.png" class="workflow-image-link"><img src="images/Screenshot 2025-11-25 174312.png" alt="Email Processing Workflow" style="width:100%; border-radius:10px; margin-bottom:1rem;" class="workflow-img"></a>
-                <h3 class="section-title scroll-animate">Email Processing Workflow</h3>
+                <a href="images/Screenshot 2025-11-25 174312.png" class="workflow-image-link"><img src="images/Screenshot 2025-11-25 174312.png" alt="Email Processing Workflow" class="workflow-img"></a>
+                <h3 class="scroll-animate">Email Processing Workflow</h3>
                 <div class="project-section">
                     <strong>Workflow:</strong>
                     <p>Collects emails from multiple inboxes but only processes specific emails using n8n, Google Workspace, OpenAI, Slack, and Microsoft API.</p>
@@ -216,8 +220,8 @@
             </div>
 
             <div class="project-card scroll-animate">
-                <a href="images/Screenshot 2025-12-01 034139.png" class="workflow-image-link"><img src="images/Screenshot 2025-12-01 034139.png" alt="Lead Pipeline & ARV Calculator" style="width:100%; border-radius:10px; margin-bottom:1rem;" class="workflow-img"></a>
-                <h3 class="section-title scroll-animate">Lead Pipeline & ARV Calculator</h3>
+                <a href="images/Screenshot 2025-12-01 034139.png" class="workflow-image-link"><img src="images/Screenshot 2025-12-01 034139.png" alt="Lead Pipeline & ARV Calculator" class="workflow-img"></a>
+                <h3 class="scroll-animate">Lead Pipeline & ARV Calculator</h3>
                 <div class="project-section">
                     <strong>Workflow:</strong>
                     <p>Automates lead capture, scoring, and calculates ARV using Make.com, Webhooks, Google Apps Script, and Google Workspace.</p>
@@ -232,8 +236,8 @@
             </div>
 
             <div class="project-card scroll-animate">
-                <a href="images/Screenshot 2025-11-25 174244.png" class="workflow-image-link"><img src="images/Screenshot 2025-11-25 174244.png" alt="Product Order Auto Generator" style="width:100%; border-radius:10px; margin-bottom:1rem;" class="workflow-img"></a>
-                <h3 class="section-title scroll-animate">Product Order Auto Generator</h3>
+                <a href="images/Screenshot 2025-11-25 174244.png" class="workflow-image-link"><img src="images/Screenshot 2025-11-25 174244.png" alt="Product Order Auto Generator" class="workflow-img"></a>
+                <h3 class="scroll-animate">Product Order Auto Generator</h3>
                 <div class="project-section">
                     <strong>Workflow:</strong>
                     <p>Automatically generates product orders using n8n and Google Workspace.</p>
@@ -248,8 +252,8 @@
 
                 <div class="project-card scroll-animate">
 
-                <a href="images/Screenshot 2025-11-23 150907.png" class="workflow-image-link"><img src="images/Screenshot 2025-11-23 150907.png" alt="Inventory Sync & Low Stock Alerts" style="width:100%; border-radius:10px; margin-bottom:1rem;" class="workflow-img"></a>
-                <h3 class="section-title scroll-animate">Inventory Sync & Low Stock Alerts</h3>
+                <a href="images/Screenshot 2025-11-23 150907.png" class="workflow-image-link"><img src="images/Screenshot 2025-11-23 150907.png" alt="Inventory Sync & Low Stock Alerts" class="workflow-img"></a>
+                <h3 class="scroll-animate">Inventory Sync & Low Stock Alerts</h3>
                 <div class="project-section">
                     <strong>Workflow:</strong>
                     <p>Syncs multiple inventory sources, designates one source of truth, and flags low stock items automatically (n8n, Webhooks, OpenAI).</p>
@@ -265,8 +269,8 @@
             </div>
 
             <div class="project-card scroll-animate">
-                <a href="images/Screenshot 2025-11-16 195139.png" class="workflow-image-link"><img src="images/Screenshot 2025-11-16 195139.png" alt="AI Social Media Content Workflow" style="width:100%; border-radius:10px; margin-bottom:1rem;" class="workflow-img"></a>
-                <h3 class="section-title scroll-animate">AI Social Media Content Workflow</h3>
+                <a href="images/Screenshot 2025-11-16 195139.png" class="workflow-image-link"><img src="images/Screenshot 2025-11-16 195139.png" alt="AI Social Media Content Workflow" class="workflow-img"></a>
+                <h3 class="scroll-animate">AI Social Media Content Workflow</h3>
                 <div class="project-section">
                     <strong>Workflow:</strong>
                     <p>Generates AI-powered social media content automatically with n8n, Webhooks, and OpenAI/ClaudeAI.</p>
@@ -384,16 +388,16 @@
 
     // Scroll-triggered animations using Intersection Observer
     const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if(entry.isIntersecting){
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
             entry.target.classList.add('visible');
-        } else {
-            entry.target.classList.remove('visible'); // optional: remove if you want repeat
+            observer.unobserve(entry.target); // animate only once
         }
-        });
-    }, { threshold: 0.2 });
+    });
+}, { threshold: 0.2 });
 
-    document.querySelectorAll('.scroll-animate').forEach(el => observer.observe(el));
+document.querySelectorAll('.scroll-animate').forEach(el => observer.observe(el));
+
     </script>
 
 </body>
