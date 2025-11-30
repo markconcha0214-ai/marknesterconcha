@@ -41,10 +41,12 @@
         .stat-label { color: #cbd5e1; font-size: 1rem; }
 
         /* About Section */
-        .about { padding: 80px 0; background: rgba(15, 15, 30, 0.5); }
-        .about-content { max-width: 800px; margin: 0 auto; text-align: center; }
+        .about { padding: 80px 0; background: rgba(15, 15, 30, 0.5); text-align: center; }
+        .about-content { max-width: 800px; margin: 0 auto; }
         .about-content h2 { color: white; font-size: 2.5rem; margin-bottom: 2rem; }
         .about-content p { color: #cbd5e1; font-size: 1.1rem; margin-bottom: 1.5rem; line-height: 1.8; }
+        .profile-pic { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-bottom: 1.5rem; border: 3px solid #6366f1; box-shadow: 0 4px 15px rgba(0,0,0,0.3); transition: transform 0.3s; }
+        .profile-pic:hover { transform: scale(1.05); }
 
         /* Section Titles */
         section { padding: 80px 0; }
@@ -59,6 +61,13 @@
         .project-card p { color: #cbd5e1; line-height: 1.7; }
         .project-tag { display: inline-block; background: rgba(99, 102, 241, 0.2); color: #a5b4fc; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.85rem; margin-right: 0.5rem; margin-top: 0.5rem; }
         .result { color: #34d399; font-weight: 600; margin-top: 1.5rem; padding: 1rem; background: rgba(52, 211, 153, 0.1); border-radius: 8px; border-left: 3px solid #34d399; }
+        .workflow-img { width: 100%; border-radius: 10px; cursor: pointer; transition: transform 0.3s, box-shadow 0.3s; margin-bottom:1rem; }
+        .workflow-img:hover { transform: scale(1.02); box-shadow: 0 10px 30px rgba(99,102,241,0.4); }
+
+         /* Modal */
+        .modal { display: none; position: fixed; z-index: 2000; padding-top: 60px; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.8); }
+        .modal-content { margin: auto; display: block; max-width: 90%; max-height: 80%; border-radius: 10px; }
+        .modal-close { position: absolute; top: 30px; right: 35px; color: #fff; font-size: 40px; font-weight: bold; cursor: pointer; }
 
         /* Skills Section */
         .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1.5rem; max-width: 900px; margin: 0 auto; }
@@ -156,6 +165,7 @@
 <section class="about" id="about">
     <div class="container">
         <div class="about-content">
+            <img src="images/487304150_9386443254766842_895506145091869963_n.jpg" alt="Mark Nester Concha" class="profile-pic">
             <h2>About Me</h2>
             <p>Over 2 years building AI automation workflows with a strong VA and BPO background. I help businesses eliminate repetitive tasks, streamline processes, and boost efficiency.</p>
             <p>I specialize in identifying workflow bottlenecks and creating solutions that save time, reduce errors, and improve productivity. From lead pipelines to multi-platform integrations and AI-powered automations, I design workflows capable of solving any pain points in your operations.</p>
@@ -170,7 +180,7 @@
         <h2 class="section-title">Project Highlights</h2>
         <div class="projects-grid">
             <div class="project-card">
-                <img src="images/Screenshot 2025-11-16 195407.png" alt="Multi-Platform AI Chatbots" style="width:100%; border-radius:10px; margin-bottom:1rem;">
+                <a href="images/Screenshot 2025-11-16 195407.png" class="workflow-image-link"><img src="images/Screenshot 2025-11-16 195407.png" alt="Multi-Platform AI Chatbots" style="width:100%; border-radius:10px; margin-bottom:1rem;" class="workflow-img"></a>
                 <h3>Multi-Platform AI Chatbots</h3>
                 <div class="project-section">
                     <strong>Workflow:</strong>
@@ -185,7 +195,7 @@
             </div>
 
             <div class="project-card">
-                <img src="images/Screenshot 2025-11-25 174312.png" alt="Email Processing Workflow" style="width:100%; border-radius:10px; margin-bottom:1rem;">
+                <a href="images/Screenshot 2025-11-25 174312.png" class="workflow-image-link"><img src="images/Screenshot 2025-11-25 174312.png" alt="Email Processing Workflow" style="width:100%; border-radius:10px; margin-bottom:1rem;" class="workflow-img"></a>
                 <h3>Email Processing Workflow</h3>
                 <div class="project-section">
                     <strong>Workflow:</strong>
@@ -201,7 +211,7 @@
             </div>
 
             <div class="project-card">
-                <img src="images/Screenshot 2025-12-01 034139.png" alt="Lead Pipeline & ARV Calculator" style="width:100%; border-radius:10px; margin-bottom:1rem;">
+                <a href="images/Screenshot 2025-12-01 034139.png" class="workflow-image-link"><img src="images/Screenshot 2025-12-01 034139.png" alt="Lead Pipeline & ARV Calculator" style="width:100%; border-radius:10px; margin-bottom:1rem;" class="workflow-img"></a>
                 <h3>Lead Pipeline & ARV Calculator</h3>
                 <div class="project-section">
                     <strong>Workflow:</strong>
@@ -216,7 +226,7 @@
             </div>
 
             <div class="project-card">
-                <img src="images/Screenshot 2025-11-25 174244.png" alt="Product Order Auto Generator" style="width:100%; border-radius:10px; margin-bottom:1rem;">
+                <a href="images/Screenshot 2025-11-25 174244.png" class="workflow-image-link"><img src="images/Screenshot 2025-11-25 174244.png" alt="Product Order Auto Generator" style="width:100%; border-radius:10px; margin-bottom:1rem;" class="workflow-img"></a>
                 <h3>Product Order Auto Generator</h3>
                 <div class="project-section">
                     <strong>Workflow:</strong>
@@ -230,7 +240,7 @@
             </div>
 
             <div class="project-card">
-                <img src="images/Screenshot 2025-11-23 150907.png" alt="Inventory Sync & Low Stock Alerts" style="width:100%; border-radius:10px; margin-bottom:1rem;">
+                <a href="images/Screenshot 2025-11-23 150907.png" class="workflow-image-link"><img src="images/Screenshot 2025-11-23 150907.png" alt="Inventory Sync & Low Stock Alerts" style="width:100%; border-radius:10px; margin-bottom:1rem;" class="workflow-img"></a>
                 <h3>Inventory Sync & Low Stock Alerts</h3>
                 <div class="project-section">
                     <strong>Workflow:</strong>
@@ -245,7 +255,7 @@
             </div>
 
             <div class="project-card">
-                <img src="images/Screenshot 2025-11-16 195139.png" alt="AI Social Media Content Workflow" style="width:100%; border-radius:10px; margin-bottom:1rem;">
+                <a href="images/Screenshot 2025-11-16 195139.png" class="workflow-image-link"><img src="images/Screenshot 2025-11-16 195139.png" alt="AI Social Media Content Workflow" style="width:100%; border-radius:10px; margin-bottom:1rem;" class="workflow-img"></a>
                 <h3>AI Social Media Content Workflow</h3>
                 <div class="project-section">
                     <strong>Workflow:</strong>
@@ -280,6 +290,13 @@
             </div>
         </div>
     </section>
+
+    <!-- Modal for Workflow Images -->
+<div id="imgModal" class="modal">
+    <span class="modal-close">&times;</span>
+    <img class="modal-content" id="modalImg">
+</div>
+
 
     <!-- Testimonials Section -->
     <section id="testimonials">
@@ -317,6 +334,8 @@
     </div>
 </section>
 
+    
+
     <!-- Footer -->
     <footer>
         &copy; 2025 Mark Nester Concha. All Rights Reserved.
@@ -326,16 +345,31 @@
     <a href="https://calendly.com/markconcha0214/discovery-call" target="_blank" class="floating-cta">Book Free Consultation</a>
 
     <script>
-        // Show floating CTA after scrolling
-        window.addEventListener('scroll', () => {
-            const cta = document.querySelector('.floating-cta');
-            if(window.scrollY > 300) {
-                cta.classList.add('visible');
-            } else {
-                cta.classList.remove('visible');
-            }
+    // Show floating CTA after scrolling
+    window.addEventListener('scroll', () => {
+        const cta = document.querySelector('.floating-cta');
+        if(window.scrollY > 300) {
+            cta.classList.add('visible');
+        } else {
+            cta.classList.remove('visible');
+        }
+    });
+
+    // Workflow image modal
+    const modal = document.getElementById("imgModal");
+    const modalImg = document.getElementById("modalImg");
+    const links = document.querySelectorAll(".workflow-image-link");
+    links.forEach(link => {
+        link.addEventListener('click', function(e){
+            e.preventDefault();
+            modal.style.display = "block";
+            modalImg.src = this.href;
         });
-    </script>
+    });
+    document.querySelector(".modal-close").onclick = function() {
+        modal.style.display = "none";
+    };
+</script>
 
 </body>
 </html>
