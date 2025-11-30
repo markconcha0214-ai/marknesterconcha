@@ -64,7 +64,7 @@
         .workflow-img { width: 100%; border-radius: 10px; cursor: pointer; transition: transform 0.3s, box-shadow 0.3s; margin-bottom:1rem; }
         .workflow-img:hover { transform: scale(1.02); box-shadow: 0 10px 30px rgba(99,102,241,0.4); }
 
-         /* Modal */
+        /* Modal */
         .modal { display: none; position: fixed; z-index: 2000; padding-top: 60px; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.8); }
         .modal-content { margin: auto; display: block; max-width: 90%; max-height: 80%; border-radius: 10px; }
         .modal-close { position: absolute; top: 30px; right: 35px; color: #fff; font-size: 40px; font-weight: bold; cursor: pointer; }
@@ -95,6 +95,10 @@
         .floating-cta.visible { opacity: 1; transform: translateY(0); }
         .floating-cta:hover { transform: translateY(-3px); box-shadow: 0 15px 40px rgba(99, 102, 241, 0.5); }
 
+        /* Scroll Animation Helper */
+        .scroll-animate { opacity: 0; transform: translateY(30px); transition: all 0.6s ease-out; }
+        .scroll-animate.visible { opacity: 1; transform: translateY(0); }
+
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.5rem; }
             .hero p { font-size: 1.1rem; }
@@ -108,7 +112,8 @@
 <body>
 
     <!-- Navigation -->
-    <nav>
+        <nav class="scroll-animate">
+
         <div class="container">
             <div class="logo">MNC</div>
             <ul>
@@ -123,7 +128,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero" id="home">
+      <section class="hero scroll-animate" id="home">
         <div class="hero-content">
             <div class="container">
                 <h1>Mark Nester Concha</h1>
@@ -138,7 +143,7 @@
     </section>
 
     <!-- Stats Section -->
-    <section class="stats">
+      <section class="stats scroll-animate">
         <div class="container">
             <div class="stats-grid">
                 <div class="stat-item">
@@ -162,7 +167,7 @@
     </section>
 
    <!-- About Section -->
-<section class="about" id="about">
+<section class="about scroll-animate" id="about">
     <div class="container">
         <div class="about-content">
             <img src="images/487304150_9386443254766842_895506145091869963_n.jpg" alt="Mark Nester Concha" class="profile-pic">
@@ -175,11 +180,11 @@
 </section>
 
     <!-- Projects Section -->
-    <section id="projects">
+    <section id="projects" class="scroll-animate">
     <div class="container">
-        <h2 class="section-title">Project Highlights</h2>
+         <h2 class="section-title scroll-animate">Project Highlights</h2>
         <div class="projects-grid">
-            <div class="project-card">
+            <div class="project-card scroll-animate">
                 <a href="images/Screenshot 2025-11-16 195407.png" class="workflow-image-link"><img src="images/Screenshot 2025-11-16 195407.png" alt="Multi-Platform AI Chatbots" style="width:100%; border-radius:10px; margin-bottom:1rem;" class="workflow-img"></a>
                 <h3>Multi-Platform AI Chatbots</h3>
                 <div class="project-section">
@@ -194,9 +199,9 @@
                 </div>
             </div>
 
-            <div class="project-card">
+            <div class="project-card scroll-animate">
                 <a href="images/Screenshot 2025-11-25 174312.png" class="workflow-image-link"><img src="images/Screenshot 2025-11-25 174312.png" alt="Email Processing Workflow" style="width:100%; border-radius:10px; margin-bottom:1rem;" class="workflow-img"></a>
-                <h3>Email Processing Workflow</h3>
+                <h3 class="section-title scroll-animate">Email Processing Workflow</h3>
                 <div class="project-section">
                     <strong>Workflow:</strong>
                     <p>Collects emails from multiple inboxes but only processes specific emails using n8n, Google Workspace, OpenAI, Slack, and Microsoft API.</p>
@@ -210,9 +215,9 @@
                 </div>
             </div>
 
-            <div class="project-card">
+            <div class="project-card scroll-animate">
                 <a href="images/Screenshot 2025-12-01 034139.png" class="workflow-image-link"><img src="images/Screenshot 2025-12-01 034139.png" alt="Lead Pipeline & ARV Calculator" style="width:100%; border-radius:10px; margin-bottom:1rem;" class="workflow-img"></a>
-                <h3>Lead Pipeline & ARV Calculator</h3>
+                <h3 class="section-title scroll-animate">Lead Pipeline & ARV Calculator</h3>
                 <div class="project-section">
                     <strong>Workflow:</strong>
                     <p>Automates lead capture, scoring, and calculates ARV using Make.com, Webhooks, Google Apps Script, and Google Workspace.</p>
@@ -226,9 +231,9 @@
                 </div>
             </div>
 
-            <div class="project-card">
+            <div class="project-card scroll-animate">
                 <a href="images/Screenshot 2025-11-25 174244.png" class="workflow-image-link"><img src="images/Screenshot 2025-11-25 174244.png" alt="Product Order Auto Generator" style="width:100%; border-radius:10px; margin-bottom:1rem;" class="workflow-img"></a>
-                <h3>Product Order Auto Generator</h3>
+                <h3 class="section-title scroll-animate">Product Order Auto Generator</h3>
                 <div class="project-section">
                     <strong>Workflow:</strong>
                     <p>Automatically generates product orders using n8n and Google Workspace.</p>
@@ -241,9 +246,10 @@
                 </div>
             </div>
 
-            <div class="project-card">
+                <div class="project-card scroll-animate">
+
                 <a href="images/Screenshot 2025-11-23 150907.png" class="workflow-image-link"><img src="images/Screenshot 2025-11-23 150907.png" alt="Inventory Sync & Low Stock Alerts" style="width:100%; border-radius:10px; margin-bottom:1rem;" class="workflow-img"></a>
-                <h3>Inventory Sync & Low Stock Alerts</h3>
+                <h3 class="section-title scroll-animate">Inventory Sync & Low Stock Alerts</h3>
                 <div class="project-section">
                     <strong>Workflow:</strong>
                     <p>Syncs multiple inventory sources, designates one source of truth, and flags low stock items automatically (n8n, Webhooks, OpenAI).</p>
@@ -258,9 +264,9 @@
                 </div>
             </div>
 
-            <div class="project-card">
+            <div class="project-card scroll-animate">
                 <a href="images/Screenshot 2025-11-16 195139.png" class="workflow-image-link"><img src="images/Screenshot 2025-11-16 195139.png" alt="AI Social Media Content Workflow" style="width:100%; border-radius:10px; margin-bottom:1rem;" class="workflow-img"></a>
-                <h3>AI Social Media Content Workflow</h3>
+                <h3 class="section-title scroll-animate">AI Social Media Content Workflow</h3>
                 <div class="project-section">
                     <strong>Workflow:</strong>
                     <p>Generates AI-powered social media content automatically with n8n, Webhooks, and OpenAI/ClaudeAI.</p>
@@ -277,7 +283,7 @@
 </section>
 
     <!-- Skills Section -->
-    <section id="skills">
+    <section class="scroll-animate" id="skills">
         <div class="container">
             <h2 class="section-title">Skills & Tools</h2>
             <div class="skills-grid">
@@ -295,6 +301,8 @@
         </div>
     </section>
 
+    
+
     <!-- Modal for Workflow Images -->
 <div id="imgModal" class="modal">
     <span class="modal-close">&times;</span>
@@ -303,7 +311,7 @@
 
 
     <!-- Testimonials Section -->
-    <section id="testimonials">
+    <section class="scroll-animate" id="testimonials">
         <div class="container">
             <h2 class="section-title">Client Testimonials</h2>
             <div class="testimonials-grid">
@@ -324,7 +332,7 @@
     </section>
 
    <!-- Contact Section -->
-<section id="contact" class="contact">
+<section id="contact" class="scroll-animate">
     <div class="container">
         <div class="contact-content">
             <h2 class="section-title">Let's Talk</h2>
@@ -348,8 +356,8 @@
     <!-- Floating CTA -->
     <a href="https://calendly.com/markconcha0214/discovery-call" target="_blank" class="floating-cta">Book Free Consultation</a>
 
-    <script>
-    // Show floating CTA after scrolling
+     <script>
+    // Floating CTA
     window.addEventListener('scroll', () => {
         const cta = document.querySelector('.floating-cta');
         if(window.scrollY > 300) {
@@ -359,7 +367,7 @@
         }
     });
 
-    // Workflow image modal
+    // Workflow Image Modal
     const modal = document.getElementById("imgModal");
     const modalImg = document.getElementById("modalImg");
     const links = document.querySelectorAll(".workflow-image-link");
@@ -373,7 +381,20 @@
     document.querySelector(".modal-close").onclick = function() {
         modal.style.display = "none";
     };
-</script>
+
+    // Scroll-triggered animations using Intersection Observer
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting){
+            entry.target.classList.add('visible');
+        } else {
+            entry.target.classList.remove('visible'); // optional: remove if you want repeat
+        }
+        });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('.scroll-animate').forEach(el => observer.observe(el));
+    </script>
 
 </body>
 </html>
