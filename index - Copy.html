@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mark Nester Concha - AI Automation Specialist</title>
+    <meta name="description" content="AI Automation Specialist helping businesses save time through intelligent workflow automation with Make.com, Zapier, n8n, and custom AI solutions.">
+    <meta property="og:title" content="Mark Nester Concha - AI Automation Specialist">
+    <meta property="og:description" content="Helping businesses automate workflows and save 20+ hours weekly through intelligent AI automation">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; background: #0f0f1e; scroll-behavior: smooth; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        /* Navigation */
+        nav { background: rgba(15, 15, 30, 0.95); padding: 1.5rem 0; position: fixed; width: 100%; top: 0; z-index: 1000; backdrop-filter: blur(10px); border-bottom: 1px solid rgba(99, 102, 241, 0.1); }
+        nav .container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.5rem; font-weight: bold; color: #6366f1; }
+        nav ul { display: flex; list-style: none; gap: 2rem; }
+        nav a { color: #e2e8f0; text-decoration: none; transition: color 0.3s; }
+        nav a:hover { color: #6366f1; }
+
+        /* Hero Section */
+        .hero { background: linear-gradient(135deg, #0f0f1e 0%, #1e1e3f 100%); padding: 150px 0 100px; text-align: center; color: white; position: relative; overflow: hidden; }
+        .hero-content { position: relative; z-index: 1; }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 0.5rem; background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero .subtitle { font-size: 1.1rem; color: #a5b4fc; margin-bottom: 1rem; font-weight: 500; }
+        .hero p { font-size: 1.3rem; color: #cbd5e1; margin-bottom: 2rem; max-width: 700px; margin-left: auto; margin-right: auto; }
+        .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+        .cta-button { display: inline-block; background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%); color: white; padding: 1rem 2.5rem; border-radius: 50px; text-decoration: none; font-weight: 600; transition: transform 0.3s, box-shadow 0.3s; box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3); }
+        .cta-button:hover { transform: translateY(-3px); box-shadow: 0 15px 40px rgba(99, 102, 241, 0.4); }
+        .cta-button.secondary { background: rgba(99, 102, 241, 0.2); border: 2px solid #6366f1; }
+
+        /* Stats Section */
+        .stats { background: rgba(30, 30, 63, 0.3); padding: 60px 0; }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; text-align: center; }
+        .stat-item { color: white; }
+        .stat-number { font-size: 3rem; font-weight: bold; background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 0.5rem; }
+        .stat-label { color: #cbd5e1; font-size: 1rem; }
+
+        /* About Section */
+        .about { padding: 80px 0; background: rgba(15, 15, 30, 0.5); }
+        .about-content { max-width: 800px; margin: 0 auto; text-align: center; }
+        .about-content h2 { color: white; font-size: 2.5rem; margin-bottom: 2rem; }
+        .about-content p { color: #cbd5e1; font-size: 1.1rem; margin-bottom: 1.5rem; line-height: 1.8; }
+
+        /* Section Titles */
+        section { padding: 80px 0; }
+        .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 3rem; color: white; }
+
+        /* Projects Grid */
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .project-card { background: rgba(30, 30, 63, 0.5); border-radius: 15px; padding: 2rem; border: 1px solid rgba(99, 102, 241, 0.2); transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s; backdrop-filter: blur(10px); }
+        .project-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(99, 102, 241, 0.3); border-color: rgba(99, 102, 241, 0.5); }
+        .project-card h3 { color: #6366f1; font-size: 1.5rem; margin-bottom: 1rem; }
+        .project-section strong { color: #a5b4fc; display: block; margin-bottom: 0.5rem; }
+        .project-card p { color: #cbd5e1; line-height: 1.7; }
+        .project-tag { display: inline-block; background: rgba(99, 102, 241, 0.2); color: #a5b4fc; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.85rem; margin-right: 0.5rem; margin-top: 0.5rem; }
+        .result { color: #34d399; font-weight: 600; margin-top: 1.5rem; padding: 1rem; background: rgba(52, 211, 153, 0.1); border-radius: 8px; border-left: 3px solid #34d399; }
+
+        /* Skills Section */
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1.5rem; max-width: 900px; margin: 0 auto; }
+        .skill-item { background: rgba(30, 30, 63, 0.5); padding: 1.5rem; border-radius: 10px; text-align: center; border: 1px solid rgba(99, 102, 241, 0.2); transition: all 0.3s; }
+        .skill-item:hover { border-color: rgba(99, 102, 241, 0.5); transform: scale(1.05); }
+        .skill-item span { color: #cbd5e1; font-weight: 600; }
+
+        /* Testimonials */
+        .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; max-width: 1000px; margin: 0 auto; }
+        .testimonial { background: rgba(30, 30, 63, 0.5); padding: 2rem; border-radius: 15px; border: 1px solid rgba(99, 102, 241, 0.2); color: #cbd5e1; font-style: italic; }
+        .testimonial strong { color: #6366f1; display: block; margin-bottom: 0.5rem; font-weight: bold; }
+
+        /* Contact Section */
+        .contact { background: rgba(30, 30, 63, 0.3); }
+        .contact-content { text-align: center; max-width: 600px; margin: 0 auto; }
+        .contact-links { display: flex; justify-content: center; gap: 2rem; margin-top: 2rem; flex-wrap: wrap; }
+        .contact-link { display: flex; align-items: center; gap: 0.5rem; color: #cbd5e1; text-decoration: none; transition: color 0.3s; font-size: 1.1rem; }
+        .contact-link:hover { color: #6366f1; }
+
+        /* Footer */
+        footer { background: rgba(15, 15, 30, 0.95); color: #94a3b8; text-align: center; padding: 2rem 0; border-top: 1px solid rgba(99, 102, 241, 0.1); }
+
+        /* Floating CTA */
+        .floating-cta { position: fixed; bottom: 30px; right: 30px; background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%); color: white; padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; box-shadow: 0 10px 30px rgba(99, 102, 241, 0.4); opacity: 0; transform: translateY(100px); transition: all 0.3s; z-index: 999; }
+        .floating-cta.visible { opacity: 1; transform: translateY(0); }
+        .floating-cta:hover { transform: translateY(-3px); box-shadow: 0 15px 40px rgba(99, 102, 241, 0.5); }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .hero p { font-size: 1.1rem; }
+            nav ul { gap: 1rem; font-size: 0.9rem; }
+            .projects-grid { grid-template-columns: 1fr; }
+            .stat-number { font-size: 2.5rem; }
+            .floating-cta { bottom: 20px; right: 20px; padding: 0.8rem 1.5rem; font-size: 0.9rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">MNC</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="container">
+                <h1>Mark Nester Concha</h1>
+                <p class="subtitle">AI Automation Specialist</p>
+                <p>Helping small businesses and startups automate workflows to save 20+ hours weekly and scale operations.</p>
+                <div class="cta-buttons">
+                    <a href="https://calendly.com/markconcha0214/discovery-call" target="_blank" class="cta-button">Book Free Consultation</a>
+                    <a href="#projects" class="cta-button secondary">View Projects</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Automations Built</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">200+</div>
+                    <div class="stat-label">Hours Saved Monthly</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">Happy Clients</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">95%</div>
+                    <div class="stat-label">Time Reduction</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <!-- About Section -->
+<section class="about" id="about">
+    <div class="container">
+        <div class="about-content">
+            <h2>About Me</h2>
+            <p>Over 2 years building AI automation workflows with a strong VA and BPO background. I help businesses eliminate repetitive tasks, streamline processes, and boost efficiency.</p>
+            <p>I specialize in identifying workflow bottlenecks and creating solutions that save time, reduce errors, and improve productivity. From lead pipelines to multi-platform integrations and AI-powered automations, I design workflows capable of solving any pain points in your operations.</p>
+            <p><strong style="color: #6366f1;">Who I Help:</strong> Small businesses, e-commerce brands, marketing agencies, and startups looking to scale operations without increasing headcount.</p>
+        </div>
+    </div>
+</section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+    <div class="container">
+        <h2 class="section-title">Project Highlights</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <img src="https://via.placeholder.com/600x300?text=Workflow+Image" alt="Multi-Platform AI Chatbots" style="width:100%; border-radius:10px; margin-bottom:1rem;">
+                <h3>Multi-Platform AI Chatbots</h3>
+                <div class="project-section">
+                    <strong>Workflow:</strong>
+                    <p>Built intelligent chatbots for personal/business use with n8n, OpenAI, and Pinecone Vector DB.</p>
+                </div>
+                <div class="result">📊 Results: Automated 80% of customer interactions, improved response time to under 2 minutes, and increased engagement by 50%.</div>
+                <div>
+                    <span class="project-tag">n8n</span>
+                    <span class="project-tag">OpenAI</span>
+                    <span class="project-tag">Pinecone</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <img src="https://via.placeholder.com/600x300?text=Workflow+Image" alt="Email Processing Workflow" style="width:100%; border-radius:10px; margin-bottom:1rem;">
+                <h3>Email Processing Workflow</h3>
+                <div class="project-section">
+                    <strong>Workflow:</strong>
+                    <p>Collects emails from multiple inboxes but only processes specific emails using n8n, Google Workspace, OpenAI, Slack, and Microsoft API.</p>
+                </div>
+                <div class="result">📊 Results: Reduced manual email sorting by 90%, prioritized important messages automatically, saving 10+ hours/week.</div>
+                <div>
+                    <span class="project-tag">n8n</span>
+                    <span class="project-tag">Google Workspace</span>
+                    <span class="project-tag">Slack</span>
+                    <span class="project-tag">Microsoft API</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <img src="https://via.placeholder.com/600x300?text=Workflow+Image" alt="Lead Pipeline & ARV Calculator" style="width:100%; border-radius:10px; margin-bottom:1rem;">
+                <h3>Lead Pipeline & ARV Calculator</h3>
+                <div class="project-section">
+                    <strong>Workflow:</strong>
+                    <p>Automates lead capture, scoring, and calculates ARV using Make.com, Webhooks, Google Apps Script, and Google Workspace.</p>
+                </div>
+                <div class="result">📊 Results: Increased qualified leads by 40%, reduced manual calculations by 80%, and improved team productivity.</div>
+                <div>
+                    <span class="project-tag">Make.com</span>
+                    <span class="project-tag">Google Apps Script</span>
+                    <span class="project-tag">Webhooks</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <img src="https://via.placeholder.com/600x300?text=Workflow+Image" alt="Product Order Auto Generator" style="width:100%; border-radius:10px; margin-bottom:1rem;">
+                <h3>Product Order Auto Generator</h3>
+                <div class="project-section">
+                    <strong>Workflow:</strong>
+                    <p>Automatically generates product orders using n8n and Google Workspace.</p>
+                </div>
+                <div class="result">📊 Results: Cut order processing time by 70%, eliminated human error, and improved fulfillment speed.</div>
+                <div>
+                    <span class="project-tag">n8n</span>
+                    <span class="project-tag">Google Workspace</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <img src="https://via.placeholder.com/600x300?text=Workflow+Image" alt="Inventory Sync & Low Stock Alerts" style="width:100%; border-radius:10px; margin-bottom:1rem;">
+                <h3>Inventory Sync & Low Stock Alerts</h3>
+                <div class="project-section">
+                    <strong>Workflow:</strong>
+                    <p>Syncs multiple inventory sources, designates one source of truth, and flags low stock items automatically (n8n, Webhooks, OpenAI).</p>
+                </div>
+                <div class="result">📊 Results: Prevented stockouts by 90%, saved 5+ hours/week of manual reconciliation.</div>
+                <div>
+                    <span class="project-tag">n8n</span>
+                    <span class="project-tag">OpenAI</span>
+                    <span class="project-tag">Webhooks</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <img src="https://via.placeholder.com/600x300?text=Workflow+Image" alt="AI Social Media Content Workflow" style="width:100%; border-radius:10px; margin-bottom:1rem;">
+                <h3>AI Social Media Content Workflow</h3>
+                <div class="project-section">
+                    <strong>Workflow:</strong>
+                    <p>Generates AI-powered social media content automatically with n8n, Webhooks, and OpenAI/ClaudeAI.</p>
+                </div>
+                <div class="result">📊 Results: Increased social media posting frequency by 300%, reduced content creation time by 10+ hours/week.</div>
+                <div>
+                    <span class="project-tag">n8n</span>
+                    <span class="project-tag">OpenAI</span>
+                    <span class="project-tag">ClaudeAI</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">Skills & Tools</h2>
+            <div class="skills-grid">
+                <div class="skill-item"><span>n8n</span></div>
+                <div class="skill-item"><span>Make.com</span></div>
+                <div class="skill-item"><span>OpenAI API</span></div>
+                <div class="skill-item"><span>ClaudeAI</span></div>
+                <div class="skill-item"><span>Google Workspace</span></div>
+                <div class="skill-item"><span>Webhooks</span></div>
+                <div class="skill-item"><span>Pinecone DB</span></div>
+                <div class="skill-item"><span>Google Apps Script</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials">
+        <div class="container">
+            <h2 class="section-title">Client Testimonials</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <strong>Jane D., E-commerce Owner</strong>
+                    "Mark transformed our lead capture process. We now close deals faster and our team loves the automation!"
+                </div>
+                <div class="testimonial">
+                    <strong>Michael S., Marketing Agency</strong>
+                    "The AI chatbot workflow reduced our response time drastically. Clients are more engaged than ever."
+                </div>
+                <div class="testimonial">
+                    <strong>Sophia R., Startup Founder</strong>
+                    "Inventory syncing automation saved us so many headaches. We never run out of stock anymore!"
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <!-- Contact Section -->
+<section id="contact" class="contact">
+    <div class="container">
+        <div class="contact-content">
+            <h2 class="section-title">Let's Talk</h2>
+            <p style="color:#e2e8f0;">Want to save hours every week and automate repetitive tasks? Schedule a free consultation:</p>
+            <a href="https://calendly.com/markconcha0214/discovery-call" target="_blank" class="cta-button">Book Consultation</a>
+            <div class="contact-links">
+                <a href="mailto:markconcha0214@gmail.com" class="contact-link">📧 Email</a>
+                <a href="https://linkedin.com/in/mark-nester-concha" target="_blank" class="contact-link">🔗 LinkedIn</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2025 Mark Nester Concha. All Rights Reserved.
+    </footer>
+
+    <!-- Floating CTA -->
+    <a href="https://calendly.com/markconcha0214/discovery-call" target="_blank" class="floating-cta">Book Free Consultation</a>
+
+    <script>
+        // Show floating CTA after scrolling
+        window.addEventListener('scroll', () => {
+            const cta = document.querySelector('.floating-cta');
+            if(window.scrollY > 300) {
+                cta.classList.add('visible');
+            } else {
+                cta.classList.remove('visible');
+            }
+        });
+    </script>
+
+</body>
+</html>
